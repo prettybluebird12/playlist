@@ -1,5 +1,9 @@
 h1 {
     text-align: center;
+    text-shadow:2px 2px #ff0000;
+}
+body{
+    background-color: #fdfd9b;
 }
 
 #cart {
@@ -13,6 +17,8 @@ h1 {
     width: 18%;
     padding: 25px 0px;
 }
+
+
 
 #images img {
     display: block;
