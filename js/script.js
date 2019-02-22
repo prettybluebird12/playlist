@@ -32,29 +32,32 @@ songLink.forEach(function(links){
 
 function emptySongInfo(){
     // Use jQuery to empty all of the remaining divs
-$("#add").click(function(){
-    var songlist= $("#songs").val();
-songs.push(songlist);
 $("#songs").empty();
-songs.forEach(function(songname){
-   $("#songs").append("<p>" + songname + "</p>"); 
-});
-
-});
-
+$("#artists").empty();
+$("#length").empty();
+$("#image").empty();
+$("#link").empty();
 }
 
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
+$("#add").click(function(){
+var songlist= $("#songs").val();
+songs.push(songlist);
 
+var artistList= $("#artists").val();
+artists.push(artistList);
 
-}
+var lengthofSong= $("#lengths").val();
+songLength.push(lengthofSong);
 
-$("#add").click(function() {
-    emptySongInfo();
-    addSongInfo();
-    displaySongInfo();
+var linkofSongs= $("#links").val();
+songLink.push(linkofSongs);
 });
 
 displaySongInfo();
+songs.forEach(function(songname){
+   $("#songs").append("<p>" + songname + "</p>"); 
+});
+}
