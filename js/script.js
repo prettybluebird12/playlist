@@ -9,27 +9,6 @@ var songLink = ["https://www.youtube.com/watch?v=2UYvF8jsx4Y", "https://www.yout
 // BELOW Add 4 More arrays to store images_links, artists, song lengths, and links for each song
 // Make sure they match the same order as your array above
 
-
-
-function displaySongInfo(){
-    // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
-imageLinks.forEach(function(img){
-$("#images").append("<img src=" + img + ">");
-});
-songs.forEach(function(song){
-$("#songs").append("<p>" + song + "</p>")
-});
-artists.forEach(function(artist){
-   $("#artists").append("<p>" + artist + "</p>"); 
-});
-songLength.forEach(function(length){
-    $("#lengths").append("<p>" + length + "</p>");
-});
-songLink.forEach(function(links){
-    $("#links").append("<a href=" + links + ">Listen</a>");
-});
-}
-
 function emptySongInfo(){
     // Use jQuery to empty all of the remaining divs
 $("#songs").empty();
@@ -38,7 +17,6 @@ $("#length").empty();
 $("#image").empty();
 $("#link").empty();
 }
-
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
@@ -56,8 +34,24 @@ var linkofSongs= $("#links").val();
 songLink.push(linkofSongs);
 });
 
-displaySongInfo();
-songs.forEach(function(songname){
-   $("#songs").append("<p>" + songname + "</p>"); 
+function displaySongInfo(){
+    // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
+imageLinks.forEach(function(img){
+$("#images").append("<img src=" + img + ">");
+});
+songs.forEach(function(song){
+$("#songs").append("<p>" + song + "</p>");
+});
+artists.forEach(function(artist){
+   $("#artists").append("<p>" + artist + "</p>"); 
+});
+songLength.forEach(function(length){
+    $("#lengths").append("<p>" + length + "</p>");
+});
+songLink.forEach(function(links){
+    $("#links").append("<a href=" + links + ">Listen</a>");
 });
 }
+
+displaySongInfo();
+
