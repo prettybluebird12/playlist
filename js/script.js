@@ -1,11 +1,11 @@
-/* global $ */
-
-// BELOW Update the songs array with four of your favorites songs.
+/*global*/
 var songs = ["Sweet Caroline", "Belle", "Money","Sicko Mode"];
-var imageLinks =["https://www.google.com/imgres?imgurl=http://www.gstatic.com/tv/thumb/persons/75449/75449_v9_ba.jpg&imgrefurl=http://google.com/search?tbm%3Disch%26q%3DNeil%2BDiamond&h=1440&w=1080&tbnid=SVlxWUfa-caHHM:&q=neil+diamond&tbnh=186&tbnw=139&usg=AI4_-kT7fqylTQ1D_cJrhHZpYoxJ2s9Mew&vet=1&docid=pOSoVz6hC_A44M&itg=1&sa=X&sqi=2&pjf=1&ved=2ahUKEwjzoomlre7fAhVaeysKHZH-DwEQ_B0wIHoECAEQBg","https://cdn-03.independent.ie/incoming/article30941643.ece/6547c/AUTOCROP/w620/beauty%20and%20the%20beast%20belle.jpg","https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.complex.com%2Fcomplex%2Fimages%2Fc_limit%2Cw_680%2Ffl_lossy%2Cpg_1%2Cq_auto%2Fdgqxp701db16qamnrieu%2Fcardi&imgrefurl=https%3A%2F%2Fwww.complex.com%2Fmusic%2F2018%2F04%2Fcardi-b-struggling-with-fame&docid=JVa9yPije0MafM&tbnid=CClC1V87bbZ5cM%3A&vet=10ahUKEwjkioLYre7fAhWDVt8KHRsqB3gQMwhtKAUwBQ..i&w=680&h=440&hl=en&authuser=0&bih=641&biw=1366&q=cardi%20b&ved=0ahUKEwjkioLYre7fAhWDVt8KHRsqB3gQMwhtKAUwBQ&iact=mrc&uact=8","https://www.google.com/imgres?imgurl=https%3A%2F%2Fs1.r29static.com%2F%2Fbin%2Fentry%2F8ca%2F720x864%2C85%2F1855877%2Fimage.jpg&imgrefurl=https%3A%2F%2Fwww.refinery29.com%2Fen-us%2F2017%2F09%2F173702%2Ftravis-scott-kanye-west-relationship&docid=IEyUn_vwAjpMGM&tbnid=IZtFy08D-4PR0M%3A&vet=10ahUKEwi07Pnnre7fAhUSTt8KHW9oAWoQMwh3KAowCg..i&w=720&h=864&hl=en&authuser=0&bih=641&biw=1366&q=travis%20scott&ved=0ahUKEwi07Pnnre7fAhUSTt8KHW9oAWoQMwh3KAowCg&iact=mrc&uact=8"]
-var artists = ["Neil Diamond", "Emma Watson", "Cardi B", "Travis Scott"]
-var songLength = [205,336,209,315]
-var songLink = ["https://www.youtube.com/watch?v=2UYvF8jsx4Y", "https://www.youtube.com/watch?v=egQbaDRMxGI", "https://www.youtube.com/watch?v=zUOh09GoQgk", "https://www.youtube.com/watch?v=6ONRf7h3Mdk"]
+var imageLinks =["data:image/jpeg;base64,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","https://cdn-03.independent.ie/incoming/article30941643.ece/6547c/AUTOCROP/w620/beauty%20and%20the%20beast%20belle.jpg","https://images.complex.com/complex/images/c_limit,w_680/fl_lossy,pg_1,q_auto/dgqxp701db16qamnrieu/cardi","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpU4lEJ2l3RgdnpGlKR1qFywxkr4EO3iyRXS3hXs8om7e310tI"];
+var artists = ["Neil Diamond", "Emma Watson", "Cardi B", "Travis Scott"];
+var songLength = [205,336,209,315];
+var songLink = ["https://www.youtube.com/watch?v=2UYvF8jsx4Y", "https://www.youtube.com/watch?v=egQbaDRMxGI", "https://www.youtube.com/watch?v=zUOh09GoQgk", "https://www.youtube.com/watch?v=6ONRf7h3Mdk"];
+
+
 // BELOW Add 4 More arrays to store images_links, artists, song lengths, and links for each song
 // Make sure they match the same order as your array above
 
@@ -13,14 +13,32 @@ function emptySongInfo(){
     // Use jQuery to empty all of the remaining divs
 $("#songs").empty();
 $("#artists").empty();
-$("#length").empty();
-$("#image").empty();
-$("#link").empty();
+$("#lengths").empty();
+$("#images").empty();
+$("#links").empty();
 }
+
+function displaySongInfo(){
+   // BELOW Use forEach Loop to display the data from each of your arrays in the correct div/* global $ */
+imageLinks.forEach(function(img){
+$("#images").append("<img src=" + img + ">");
+});
+songs.forEach(function(song){
+$("#songs").append("<p>" + song + "</p>");
+});
+artists.forEach(function(artistName){
+   $("#artists").append("<p>" + artistName + "</p>"); 
+});
+songLength.forEach(function(length){
+    $("#lengths").append("<p>" + length + "</p>");
+});
+songLink.forEach(function(links){
+    $("#links").append("<a href=" + links + ">Listen</a>");
+});
+
 
 function addSongInfo(){
     // BELOW write the code to add new items to each of the arrays.
-$("#add").click(function(){
 var songlist= $("#songs").val();
 songs.push(songlist);
 
@@ -32,26 +50,11 @@ songLength.push(lengthofSong);
 
 var linkofSongs= $("#links").val();
 songLink.push(linkofSongs);
-});
-
-function displaySongInfo(){
-    // BELOW Use forEach Loop to display the data from each of your arrays in the correct div
-imageLinks.forEach(function(img){
-$("#images").append("<img src=" + img + ">");
-});
-songs.forEach(function(song){
-$("#songs").append("<p>" + song + "</p>");
-});
-artists.forEach(function(artist){
-   $("#artists").append("<p>" + artist + "</p>"); 
-});
-songLength.forEach(function(length){
-    $("#lengths").append("<p>" + length + "</p>");
-});
-songLink.forEach(function(links){
-    $("#links").append("<a href=" + links + ">Listen</a>");
-});
 }
 
-displaySongInfo();
 
+$("#add").click(function(){
+emptySongInfo();
+displaySongInfo();
+addSongInfo();
+});
